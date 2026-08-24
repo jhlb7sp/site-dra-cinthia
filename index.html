@@ -2,443 +2,1448 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CKX5GBMK75"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-CKX5GBMK75');
+    </script>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Dra. Cinthia Leone | Dentista em Vila Formosa | Lentes de Resina | Facetas em Resina</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+        Dra. Cinthia Leone | Dentista na Vila Formosa | Estética Dental e Ortodontia
+    </title>
+
     <meta name="description"
-        content="Dentista em Vila Formosa especializada em lentes de resina, estética dental, botox e atendimento infantil. Agende sua avaliação com a Dra. Cinthia Leone." />
+        content="Atendimento odontológico na Vila Formosa com foco em estética dental, facetas em resina, ortodontia, implantes e atendimento infantil. Conheça o trabalho da Dra. Cinthia Leone." />
+
+    <meta name="theme-color" content="#F5F1EA" />
+
+    <!-- =====================================================
+         FONTES
+         Cormorant Garamond = identidade / títulos
+         Inter = leitura / interface
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css?v=1" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css?v=2">
 </head>
 
+
 <body id="top">
-    <!-- Header fixo -->
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
     <header class="header">
+
         <div class="container header__inner">
-            <a class="brand brand--logo-only" href="#top" aria-label="Ir para o topo">
-                <img class="brand__logo-img" src="./assets/logo2.png" alt="Dra. Cinthia Leone Cunha">
+
+            <!-- LOGO -->
+
+            <a class="brand" href="#top" aria-label="Dra. Cinthia Leone - Ir para o início">
+
+                <img class="brand__logo-img" src="./assets/logo2.png" alt="Dra. Cinthia Leone">
+
             </a>
 
-            <nav class="nav" aria-label="Menu">
-                <a href="#sobre">Sobre</a>
-                <a href="#casos">Casos</a>
-                <a href="#procedimentos">Procedimentos</a>
-                <a href="#clinica">Clinica</a>
-                <a href="#localizacao">Localização</a>
+
+            <!-- MENU DESKTOP -->
+
+            <nav class="nav" id="mainNav" aria-label="Menu principal">
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#casos">
+                    Casos
+                </a>
+
+                <a href="#procedimentos">
+                    Tratamentos
+                </a>
+
+                <a href="#clinica">
+                    A clínica
+                </a>
+
+                <a href="#avaliacoes">
+                    Avaliações
+                </a>
+
+                <a href="#localizacao">
+                    Localização
+                </a>
+
             </nav>
 
-            <a class="btn btn--primary" id="btnHeaderCta" href="#" target="_blank" rel="noopener">
-                Agendar consulta
-            </a>
+
+            <!-- CTA -->
+
+            <div class="header__actions">
+
+                <a class="btn btn--primary header__cta" id="btnHeaderCta" href="#" target="_blank" rel="noopener">
+
+                    Agendar consulta
+
+                </a>
+
+
+                <!-- MOBILE MENU -->
+
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobileNav">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
         </div>
+
+
+        <!-- MENU MOBILE -->
+
+        <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+
+            <div class="container mobile-nav__inner">
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#casos">
+                    Casos
+                </a>
+
+                <a href="#procedimentos">
+                    Tratamentos
+                </a>
+
+                <a href="#clinica">
+                    A clínica
+                </a>
+
+                <a href="#avaliacoes">
+                    Avaliações
+                </a>
+
+                <a href="#localizacao">
+                    Localização
+                </a>
+
+                <a class="btn btn--primary" id="btnMobileCta" href="#" target="_blank" rel="noopener">
+
+                    Agendar consulta
+
+                </a>
+
+            </div>
+
+        </nav>
+
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero__bg">
-            <img src="./assets/hero.jpg" alt="Sorriso" onerror="this.style.display='none'">
-            <div class="hero__overlay"></div>
-        </div>
 
-        <div class="container hero__content">
-            <h1>Transforme seu sorriso <br>com naturalidade e excelência</h1>
-            <p>
-                Atendimento personalizado em um ambiente moderno, pensado para seu conforto e segurança.
-            </p>
+    <main>
 
-            <div class="hero__cta">
-                <a class="btn btn--primary btn--lg" id="btnHeroCta" href="#" target="_blank" rel="noopener">
-                    Agendar consulta
-                </a>
-                <a class="btn btn--ghost btn--lg" href="#casos">Ver casos</a>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero" aria-labelledby="hero-title">
+
+            <div class="hero__bg">
+
+                <img src="./assets/hero.jpg" alt="" aria-hidden="true">
+
+                <div class="hero__overlay"></div>
+
             </div>
 
-            <div class="hero__badges">
-                <div class="badge">Consultório novo</div>
-                <div class="badge">Tratamento VIP</div>
-                <div class="badge">Planejamento personalizado</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Sobre -->
-    <section class="section" id="sobre">
-        <div class="container grid-2">
-            <div class="card">
-                <h2>Dra. Cinthia Leone Cunha</h2>
-                <p class="muted">
-                    Acredito que um sorriso vai muito além da estética. Ele transmite autoestima, confiança e bem-estar.
-                    Sou Dra. Cinthia Leone da Cunha, cirurgiã-dentista, casada e mãe de um menino lindo. Formada pela
-                    Universidade Cidade de São Paulo (UNICID) desde 2017, sou pós-graduada em Ortodontia e Ortopedia
-                    Facial.
-                    Atuo com foco em Estética Dental, especialmente em Lentes de Resina, sempre buscando resultados
-                    naturais, harmoniosos e personalizados para cada paciente.
-                    Além da estética dental, também realizo atendimento infantil com muito carinho, paciência e cuidado,
-                    proporcionando uma experiência leve, acolhedora e tranquila para as crianças.
-                    Cada sorriso é planejado de forma única, respeitando as características, desejos e necessidades de
-                    quem confia no meu trabalho.
-                    Mais do que transformar dentes, meu propósito é devolver segurança, felicidade e a confiança de
-                    sorrir sem medo.
-                    Será um prazer receber você no consultório e fazer parte da sua transformação, construindo juntos um
-                    sorriso saudável, bonito e cheio de personalidade..
+            <div class="container hero__content">
+
+                <div class="hero__copy">
+
+                    <span class="eyebrow eyebrow--light">
+                        Odontologia • Estética • Cuidado
+                    </span>
+
+
+                    <h1 id="hero-title">
+
+                        Seu sorriso,
+                        <span>com a sua essência.</span>
+
+                    </h1>
+
+
+                    <p class="hero__lead">
+
+                        Odontologia feita com planejamento,
+                        naturalidade e atenção aos detalhes
+                        para transformar o sorriso sem perder
+                        aquilo que torna você único.
+
+                    </p>
+
+
+                    <div class="hero__cta">
+
+                        <a class="btn btn--primary btn--lg" id="btnHeroCta" href="#" target="_blank" rel="noopener">
+
+                            Agendar minha avaliação
+
+                        </a>
+
+
+                        <a class="btn btn--light btn--lg" href="#casos">
+
+                            Conhecer resultados
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero__trust">
+
+                        <div class="hero__trust-item">
+
+                            <strong>
+                                Atendimento
+                            </strong>
+
+                            <span>
+                                personalizado
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero__trust-divider"></div>
+
+
+                        <div class="hero__trust-item">
+
+                            <strong>
+                                Resultados
+                            </strong>
+
+                            <span>
+                                naturais
+                            </span>
+
+                        </div>
+
+
+                        <div class="hero__trust-divider"></div>
+
+
+                        <div class="hero__trust-item">
+
+                            <strong>
+                                Ambiente
+                            </strong>
+
+                            <span>
+                                acolhedor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO / CONCEITO
+        ====================================================== -->
+
+        <section class="intro">
+
+            <div class="container intro__inner">
+
+                <span class="eyebrow">
+                    Uma odontologia feita para você
+                </span>
+
+
+                <p class="intro__statement">
+
+                    Cada sorriso conta uma história.
+                    Por isso, cada tratamento começa
+                    ouvindo você.
+
                 </p>
 
-                <div class="spacer"></div>
 
-                <a class="btn btn--primary" id="btnSobreCta" href="#" target="_blank" rel="noopener">
-                    Quero agendar minha avaliação
+                <div class="intro__line"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOBRE A DRA.
+        ====================================================== -->
+
+        <section class="section section--about" id="sobre">
+
+            <div class="container about">
+
+
+                <!-- FOTO -->
+
+                <div class="about__media">
+
+                    <div class="about__image-wrap">
+
+                        <img src="./assets/dra.jpg" alt="Dra. Cinthia Leone em seu consultório" class="about__image">
+
+                    </div>
+
+
+                    <div class="about__signature">
+
+                        <strong>
+                            Dra. Cinthia Leone Cunha
+                        </strong>
+
+                        <span id="croText">
+                            CRO: 126.543
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEXTO -->
+
+                <div class="about__content">
+
+                    <span class="eyebrow">
+                        Quem vai cuidar do seu sorriso
+                    </span>
+
+
+                    <h2>
+                        Cuidado, técnica e
+                        <em>naturalidade.</em>
+                    </h2>
+
+
+                    <div class="about__text">
+
+                        <p>
+                            Acredito que um sorriso vai muito além
+                            da estética. Ele transmite autoestima,
+                            confiança e bem-estar.
+                        </p>
+
+                        <p>
+                            Sou Dra. Cinthia Leone da Cunha,
+                            cirurgiã-dentista, formada pela
+                            Universidade Cidade de São Paulo
+                            (UNICID) desde 2017 e pós-graduada
+                            em Ortodontia e Ortopedia Facial.
+                        </p>
+
+                        <p>
+                            Atuo com foco em estética dental,
+                            especialmente em facetas em resina,
+                            buscando resultados naturais,
+                            harmoniosos e personalizados para
+                            cada paciente.
+                        </p>
+
+                        <p>
+                            Também realizo atendimento infantil
+                            com carinho, paciência e cuidado,
+                            tornando a experiência no dentista
+                            mais leve e acolhedora para as crianças.
+                        </p>
+
+                        <p>
+                            Meu propósito é cuidar de cada sorriso
+                            de forma individual, respeitando suas
+                            características, desejos e necessidades.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about__cta">
+
+                        <a class="btn btn--primary" id="btnSobreCta" href="#" target="_blank" rel="noopener">
+
+                            Quero cuidar do meu sorriso
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CASOS
+        ====================================================== -->
+
+        <section class="section section--gallery" id="casos">
+
+            <div class="container section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        Resultados reais
+                    </span>
+
+                    <h2>
+                        Alguns sorrisos que
+                        <em>já passaram por aqui.</em>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Cada resultado é planejado individualmente,
+                    respeitando anatomia, proporção e personalidade.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="carousel" data-carousel="cases">
+
+                    <button class="carousel__btn carousel__btn--prev" data-prev type="button"
+                        aria-label="Caso anterior">
+
+                        ‹
+
+                    </button>
+
+
+                    <div class="carousel__track" data-track data-gallery="casos">
+
+                        <!--
+                            Preenchido automaticamente
+                            pelo galerias.js + script.js
+                        -->
+
+                    </div>
+
+
+                    <button class="carousel__btn carousel__btn--next" data-next type="button" aria-label="Próximo caso">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="container section-cta">
+
+                <p>
+                    Quer entender o que é possível fazer
+                    pelo seu sorriso?
+                </p>
+
+                <a class="btn btn--primary" id="btnCasosCta" href="#" target="_blank" rel="noopener">
+
+                    Agendar uma avaliação
+
                 </a>
+
             </div>
 
-            <div class="card card--media">
-                <img src="./assets/dra.jpg" alt="Foto da Dra. Cinthia Leone" onerror="this.style.display='none'">
-                <div class="media__caption">
-                    <strong>Dra. Cinthia Leone Cunha</strong>
-                    <span class="muted" id="croText">CRO: 126.543</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Casos: carrossel com centro maior -->
-    <section class="section" id="casos">
-        <div class="container section__head">
-            <h2>Veja alguns de nossos casos</h2>
-            <p class="muted"></p>
-        </div>
+        <!-- =====================================================
+     ANTES E DEPOIS
+====================================================== -->
 
-        <div class="container">
-            <div class="carousel" data-carousel="cases">
-                <button class="carousel__btn" data-prev aria-label="Anterior">‹</button>
-                <div class="carousel__track" data-track>
-                    <div class="carousel__item is-active"><img src="./assets/caso1.png" alt="Caso 1"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso2.png" alt="Caso 2"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso3.png" alt="Caso 3"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso4.png" alt="Caso 4"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso5.png" alt="Caso 5"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso6.png" alt="Caso 6"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso7.png" alt="Caso 7"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso8.png" alt="Caso 8"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso9.png" alt="Caso 9"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso10.png" alt="Caso 10"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso11.png" alt="Caso 11"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso12.png" alt="Caso 12"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/caso13.png" alt="Caso 13"
-                            onerror="this.style.display='none'"></div>
-                </div>
-                <button class="carousel__btn" data-next aria-label="Próximo">›</button>
-            </div>
-        </div>
+        <section class="section before-after-gallery">
 
-        <div class="container center">
-            <a class="btn btn--primary" id="btnCasosCta" href="#" target="_blank" rel="noopener">
-                Agendar consulta
-            </a>
-        </div>
+            <div class="container section-heading section-heading--center">
 
-        <div class="container divider"></div>
+                <span class="eyebrow">
+                    Transformações
+                </span>
 
-        <!-- Antes e Depois (arrastável) -->
-        <div class="container section__head">
-            <h2>Antes e depois</h2>
-            <p class="muted">Arraste para comparar.</p>
-        </div>
+                <h2>
+                    Antes e depois
+                </h2>
 
-        <div class="container">
-            <div class="before-after" data-before-after>
-                <div class="before-after__img before">
-                    <img src="./assets/antes.jpg" alt="Antes" onerror="this.style.display='none'">
-                </div>
+                <p>
+                    Arraste para comparar o resultado e veja
+                    alguns dos sorrisos que transformamos.
+                </p>
 
-                <div class="before-after__img after" data-after>
-                    <img src="./assets/depois.jpg" alt="Depois" onerror="this.style.display='none'">
-                </div>
-
-                <input class="before-after__range" type="range" min="0" max="100" value="50"
-                    aria-label="Comparar antes e depois" data-range>
-                <div class="before-after__handle" data-handle></div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <br>
-        <div class="carousel" data-carousel="cases">
-            <button class="carousel__btn" data-prev aria-label="Anterior">‹</button>
-            <div class="carousel__track" data-track>
-                <div class="carousel__ad is-active"><img src="./assets/ad01.png" alt="Caso 1"
-                        onerror="this.style.display='none'"></div>
-                <div class="carousel__ad"><img src="./assets/ad02.png" alt="Caso 2" onerror="this.style.display='none'">
-                </div>
-                <div class="carousel__ad"><img src="./assets/ad03.png" alt="Caso 3" onerror="this.style.display='none'">
-                </div>
-                <div class="carousel__ad"><img src="./assets/ad04.jpg" alt="Caso 4" onerror="this.style.display='none'">
-                </div>
-                <div class="carousel__ad"><img src="./assets/ad05.png" alt="Caso 5" onerror="this.style.display='none'">
-                </div>
-                <div class="carousel__ad"><img src="./assets/ad06.png" alt="Caso 6" onerror="this.style.display='none'">
-                </div>
-                <div class="carousel__ad"><img src="./assets/ad07.png" alt="Caso 7" onerror="this.style.display='none'">
-                </div>
-                <div class="carousel__ad"><img src="./assets/ad08.png" alt="Caso 8" onerror="this.style.display='none'">
-                </div>
-            </div>
-            <button class="carousel__btn" data-next aria-label="Próximo">›</button>
-        </div>
-    </div>
-    <br>
-
-    <div class="container center">
-        <a class="btn btn--primary" id="btnCasosCta" href="#" target="_blank" rel="noopener">
-            Agendar consulta
-        </a>
-    </div>
-
-    <!-- Reviews -->
-    <section class="section section--soft">
-        <div class="container section__head">
-            <h2>Veja o que nossos clientes estão dizendo</h2>
-            <p class="muted"></p>
-        </div>
-
-        <div class="container">
-            <div class="carousel" data-carousel="reviews">
-                <button class="carousel__btn" data-prev aria-label="Anterior">‹</button>
-                <div class="carousel__track" data-track>
-
-                    <article class="review">
-                        <div class="review__top">
-                            <div class="stars" aria-label="5 estrelas">★★★★★</div>
-                            <span class="g">Google</span>
-                        </div>
-                        <p class="muted">“Minha família e eu recomendamos o atendimento da Dra Cinthia. Nossos filhos a
-                            amam!
-                            Ela é uma profissional competente e atenciosa. O consultório é bem localizado e possui
-                            facilidade em estacionar. O preço é excelente também!”</p>
-                        <strong>Sâmia Vilivas Pieroni</strong>
-                    </article>
-
-                    <article class="review">
-                        <div class="review__top">
-                            <div class="stars" aria-label="5 estrelas">★★★★★</div>
-                            <span class="g">Google</span>
-                        </div>
-                        <p class="muted">“Atendimento excelente, foi a primeira vez da minha filha no dentista a Dra
-                            Cinthia foi super atenciosa, conseguiu manter minha filha calma e realizou o procedimento
-                            com muita qualidade. Super indico”</p>
-                        <strong>Danielle Alves</strong>
-                    </article>
-
-                    <article class="review">
-                        <div class="review__top">
-                            <div class="stars" aria-label="5 estrelas">★★★★★</div>
-                            <span class="g">Google</span>
-                        </div>
-                        <p class="muted">“Atendimento 10! Lugar novo e aconchegante. Dra. Cinthia é muito atenciosa e
-                            explica tudo antes de fazer qualquer procedimento”</p>
-                        <strong>Thiago De Paula Martins</strong>
-                    </article>
-                    <article class="review">
-                        <div class="review__top">
-                            <div class="stars" aria-label="5 estrelas">★★★★★</div>
-                            <span class="g">Google</span>
-                        </div>
-                        <p class="muted">“Ambiente super aconchegante, doutora mega simpática e atenciosa! Somente
-                            agradecer pelo trabalho impecável”</p>
-                        <strong>Jhennyfer Macedo</strong>
-                    </article>
-
-                </div>
-                <button class="carousel__btn" data-next aria-label="Próximo">›</button>
-            </div>
-        </div>
-
-        <div class="container center">
-            <a class="btn btn--ghost" id="btnGoogleReviews" href="#" target="_blank" rel="noopener">
-                Ver mais avaliações no Google
-            </a>
-        </div>
-    </section>
-
-    <!-- Procedimentos (carrossel) -->
-    <section class="section" id="procedimentos">
-        <div class="container section__head">
-            <h2>Os melhores tratamentos você encontra aqui</h2>
-            <p class="muted"></p>
-        </div>
-
-        <div class="container">
-            <div class="carousel" data-carousel="treatments">
-                <button class="carousel__btn" data-prev aria-label="Anterior">‹</button>
-
-                <div class="carousel__track" data-track>
-                    <article class="treatment">
-                        <img src="./assets/faceta.png" alt="Facetas" onerror="this.style.display='none'">
-                        <div class="treatment__body">
-                            <strong>Facetas em resina</strong>
-                            <p class="muted">Solução estética rápida para corrigir imperfeições, preservando estrutura
-                                dental.</p>
-                        </div>
-                    </article>
-
-                    <article class="treatment">
-                        <img src="./assets/botox.png" alt="Botox" onerror="this.style.display='none'">
-                        <div class="treatment__body">
-                            <strong>Botox</strong>
-                            <p class="muted">Suavização de linhas e cuidado com harmonia facial, com avaliação
-                                individual.</p>
-                        </div>
-                    </article>
-                    <article class="treatment">
-                        <img src="./assets/implante.png" alt="Implante" onerror="this.style.display='none'">
-                        <div class="treatment__body">
-                            <strong>Implante</strong>
-                            <p class="muted">Reposição do dente com segurança, devolvendo função, estética e conforto ao
-                                sorriso.</p>
-                        </div>
-                    </article>
-                    <article class="treatment">
-                        <img src="./assets/aparelho.png" alt="Aparelho" onerror="this.style.display='none'">
-                        <div class="treatment__body">
-                            <strong>Aparelho / Alinhamento</strong>
-                            <p class="muted">Planejamento para alinhar sorriso e melhorar função com acompanhamento.</p>
-                        </div>
-                    </article>
-                    <article class="treatment">
-                        <img src="./assets/atend_pedi.png" alt="Odontopediatria" onerror="this.style.display='none'">
-                        <div class="treatment__body">
-                            <strong>Atendimento infantil especializado</strong>
-                            <p class="muted">Tratamentos pensados para o sorriso das crianças, com carinho, paciência e
-                                um ambiente seguro para uma experiência tranquila.</p>
-                        </div>
-                    </article>
-
-                </div>
-
-                <button class="carousel__btn" data-next aria-label="Próximo">›</button>
-            </div>
-        </div>
-
-        <div class="container center">
-            <a class="btn btn--primary" id="btnProcCta" href="#" target="_blank" rel="noopener">
-                Quero agendar minha consulta
-            </a>
-        </div>
-    </section>
-
-    <!-- Nossa clínica (carrossel) -->
-    <section class="section section--soft" id="clinica">
-        <div class="container section__head">
-            <h2>Nossa clínica</h2>
-            <p class="muted">Algumas fotos do espaço (consultório novo).</p>
-        </div>
-
-        <div class="container">
-            <div class="carousel" data-carousel="clinic">
-                <button class="carousel__btn" data-prev aria-label="Anterior">‹</button>
-                <div class="carousel__track" data-track>
-                    <div class="carousel__item is-active"><img src="./assets/clinica1.jpg" alt="Clinica"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/clinica2.jpg" alt="Recepcao"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/clinica3.jpg" alt="Consultorio"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/clinica4.jpg" alt="Ambiente"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/clinica5.jpg" alt="Ambiente"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/clinica6.jpg" alt="Ambiente"
-                            onerror="this.style.display='none'"></div>
-                    <div class="carousel__item"><img src="./assets/clinica7.jpg" alt="Ambiente"
-                            onerror="this.style.display='none'"></div>
-
-                </div>
-                <button class="carousel__btn" data-next aria-label="Próximo">›</button>
             </div>
 
-            <p class="muted center mt">
-                Preparamos um ambiente agradável para atender cada paciente com conforto e atenção.
-            </p>
-        </div>
-    </section>
 
-    <!-- Localização -->
-    <section class="section" id="localizacao">
-        <div class="container section__head">
-            <h2>Localização</h2>
-            <p class="muted" id="addressText">📍
-                Praça Barão de Macaúbas, 31 - Vila Formosa - São Paulo - SP, 03357-040</p>
-        </div>
+            <!-- =================================================
+         COMPARADOR INTERATIVO
+    ================================================== -->
 
-        <div class="container">
-            <div class="map-embed">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1449792240123!2d-46.559785224669945!3d-23.56323597879854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c2b9e260d8d%3A0xeee18113c62690cc!2sPra%C3%A7a%20Bar%C3%A3o%20de%20Maca%C3%BAbas%2C%2031%20-%20Vila%20Formosa%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003357-040!5e0!3m2!1spt-BR!2sbr!4v1769139103055!5m2!1spt-BR!2sbr"
-                    width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            <div class="container">
 
-                <a class="map-embed__cta" href="https://www.google.com/maps/place/..." target="_blank" rel="noopener">
-                    Abrir no Google Maps
+                <div class="comparison">
+
+                    <div class="comparison__labels">
+
+                        <span>Antes</span>
+
+                        <span>Depois</span>
+
+                    </div>
+
+
+                    <div class="before-after" data-before-after>
+
+
+                        <!-- DEPOIS - imagem base -->
+
+                        <div class="before-after__image before-after__image--after">
+
+                            <img src="./assets/depois.jpg" alt="Resultado depois do tratamento odontológico">
+
+                        </div>
+
+
+                        <!-- ANTES - camada que será recortada -->
+
+                        <div class="before-after__image before-after__image--before" data-before>
+
+                            <img src="./assets/antes.jpg" alt="Sorriso antes do tratamento odontológico">
+
+                        </div>
+
+
+                        <!-- RANGE ACESSÍVEL -->
+
+                        <input class="before-after__range" type="range" min="0" max="100" value="50"
+                            aria-label="Comparar foto antes e depois" data-range>
+
+
+                        <!-- DIVISÓRIA -->
+
+                        <div class="before-after__handle" data-handle>
+
+                            <span class="before-after__handle-icon">
+                                ‹ ›
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="comparison__hint">
+                        Arraste para comparar
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+         OUTROS RESULTADOS
+    ================================================== -->
+
+            <div class="container results-heading">
+
+                <span class="eyebrow">
+                    Mais resultados
+                </span>
+
+                <h3>
+                    Confira outras transformações
+                </h3>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="carousel" data-carousel="before-after">
+
+                    <button class="carousel__btn carousel__btn--prev" data-prev type="button"
+                        aria-label="Resultado anterior">
+
+                        ‹
+
+                    </button>
+
+
+                    <div class="carousel__track" data-track data-gallery="antesdepois">
+
+                        <!-- Gerado automaticamente -->
+
+                    </div>
+
+
+                    <button class="carousel__btn carousel__btn--next" data-next type="button"
+                        aria-label="Próximo resultado">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="container center mt-xl">
+
+                <a class="btn btn--outline" id="btnAntesDepoisCta" href="#" target="_blank" rel="noopener">
+
+                    Quero transformar meu sorriso
+
                 </a>
+
             </div>
 
-            <div class="center mt">
-                <a class="btn btn--primary" id="btnLocCta" href="#" target="_blank" rel="noopener">
-                    Agendar consulta
+        </section>
+
+
+        <!-- =====================================================
+             PROCEDIMENTOS
+        ====================================================== -->
+
+        <section class="section section--treatments" id="procedimentos">
+
+            <div class="container section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        Tratamentos
+                    </span>
+
+                    <h2>
+                        Cuidado completo
+                        <em>em cada fase do sorriso.</em>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Planejamento individualizado para estética,
+                    função, prevenção e saúde bucal.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="carousel" data-carousel="treatments">
+
+
+                    <button class="carousel__btn carousel__btn--prev" data-prev type="button"
+                        aria-label="Tratamento anterior">
+
+                        ‹
+
+                    </button>
+
+
+                    <div class="carousel__track" data-track>
+
+
+                        <!-- FACETAS -->
+
+                        <article class="treatment">
+
+                            <div class="treatment__image">
+
+                                <img src="./assets/faceta.png" alt="Resultado de facetas em resina">
+
+                            </div>
+
+
+                            <div class="treatment__body">
+
+                                <span class="treatment__number">
+                                    01
+                                </span>
+
+
+                                <h3>
+                                    Facetas em resina
+                                </h3>
+
+
+                                <p>
+                                    Transformação estética planejada
+                                    para melhorar forma, proporção e
+                                    harmonia do sorriso com naturalidade.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ORTODONTIA -->
+
+                        <article class="treatment">
+
+                            <div class="treatment__image">
+
+                                <img src="./assets/aparelho.png" alt="Tratamento ortodôntico">
+
+                            </div>
+
+
+                            <div class="treatment__body">
+
+                                <span class="treatment__number">
+                                    02
+                                </span>
+
+
+                                <h3>
+                                    Ortodontia
+                                </h3>
+
+
+                                <p>
+                                    Planejamento para melhorar
+                                    alinhamento, função e equilíbrio
+                                    do sorriso em todas as fases.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- IMPLANTE -->
+
+                        <article class="treatment">
+
+                            <div class="treatment__image">
+
+                                <img src="./assets/implante.png" alt="Tratamento com implante dentário">
+
+                            </div>
+
+
+                            <div class="treatment__body">
+
+                                <span class="treatment__number">
+                                    03
+                                </span>
+
+
+                                <h3>
+                                    Implantes
+                                </h3>
+
+
+                                <p>
+                                    Reposição dentária planejada
+                                    para devolver função, conforto
+                                    e segurança ao sorrir.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- INFANTIL -->
+
+                        <article class="treatment">
+
+                            <div class="treatment__image">
+
+                                <img src="./assets/atend_pedi.png" alt="Atendimento odontológico infantil">
+
+                            </div>
+
+
+                            <div class="treatment__body">
+
+                                <span class="treatment__number">
+                                    04
+                                </span>
+
+
+                                <h3>
+                                    Atendimento infantil
+                                </h3>
+
+
+                                <p>
+                                    Uma experiência acolhedora,
+                                    paciente e tranquila para
+                                    construir uma relação positiva
+                                    da criança com o dentista.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- BOTOX -->
+
+                        <article class="treatment">
+
+                            <div class="treatment__image">
+
+                                <img src="./assets/botox.png" alt="Aplicação de toxina botulínica">
+
+                            </div>
+
+
+                            <div class="treatment__body">
+
+                                <span class="treatment__number">
+                                    05
+                                </span>
+
+
+                                <h3>
+                                    Toxina botulínica
+                                </h3>
+
+
+                                <p>
+                                    Avaliação individualizada
+                                    buscando equilíbrio e harmonia
+                                    de forma sutil e natural.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <button class="carousel__btn carousel__btn--next" data-next type="button"
+                        aria-label="Próximo tratamento">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="container center mt-xl">
+
+                <a class="btn btn--primary" id="btnProcCta" href="#" target="_blank" rel="noopener">
+
+                    Conversar sobre meu tratamento
+
                 </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NOSSA CLÍNICA
+        ====================================================== -->
+
+        <section class="section clinic" id="clinica">
+
+            <div class="container clinic__intro">
+
+                <div>
+
+                    <span class="eyebrow eyebrow--light">
+                        Nosso espaço
+                    </span>
+
+
+                    <h2>
+                        Um ambiente criado
+                        <em>para você se sentir bem.</em>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Um consultório moderno, confortável e acolhedor,
+                    preparado para que cada etapa do atendimento
+                    aconteça com tranquilidade.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="carousel carousel--clinic" data-carousel="clinic">
+
+
+                    <button class="carousel__btn carousel__btn--light carousel__btn--prev" data-prev type="button"
+                        aria-label="Foto anterior da clínica">
+
+                        ‹
+
+                    </button>
+
+
+                    <div class="carousel__track" data-track data-gallery="nossaclinica">
+
+                        <!--
+                            Preenchido automaticamente
+                            pelo galerias.js + script.js
+                        -->
+
+                    </div>
+
+
+                    <button class="carousel__btn carousel__btn--light carousel__btn--next" data-next type="button"
+                        aria-label="Próxima foto da clínica">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AVALIAÇÕES
+        ====================================================== -->
+
+        <section class="section reviews-section" id="avaliacoes">
+
+            <div class="container section-heading section-heading--center">
+
+                <span class="eyebrow">
+                    Quem já passou por aqui
+                </span>
+
+
+                <h2>
+                    Experiências que
+                    <em>falam por nós.</em>
+                </h2>
+
+
+                <p>
+                    Alguns depoimentos compartilhados
+                    por nossos pacientes no Google.
+                </p>
+
+            </div>
+
+
+            <div class="container">
+
+                <div class="carousel" data-carousel="reviews">
+
+
+                    <button class="carousel__btn carousel__btn--prev" data-prev type="button"
+                        aria-label="Avaliação anterior">
+
+                        ‹
+
+                    </button>
+
+
+                    <div class="carousel__track" data-track>
+
+
+                        <!-- REVIEW 1 -->
+
+                        <article class="review">
+
+                            <div class="review__top">
+
+                                <div class="stars" aria-label="5 estrelas">
+
+                                    ★★★★★
+
+                                </div>
+
+                                <span class="google-label">
+                                    Google
+                                </span>
+
+                            </div>
+
+
+                            <blockquote>
+
+                                “Minha família e eu recomendamos o atendimento da Dra Cinthia.
+                                Nossos filhos a amam! Ela é uma profissional competente e
+                                atenciosa. O consultório é bem localizado e possui facilidade
+                                em estacionar. O preço é excelente também!”
+
+                            </blockquote>
+
+
+                            <strong>
+                                Sâmia Vilivas Pieroni
+                            </strong>
+
+                        </article>
+
+
+                        <!-- REVIEW 2 -->
+
+                        <article class="review">
+
+                            <div class="review__top">
+
+                                <div class="stars" aria-label="5 estrelas">
+
+                                    ★★★★★
+
+                                </div>
+
+                                <span class="google-label">
+                                    Google
+                                </span>
+
+                            </div>
+
+
+                            <blockquote>
+
+                                “Atendimento excelente, foi a primeira vez da minha filha
+                                no dentista. A Dra. Cinthia foi super atenciosa,
+                                conseguiu manter minha filha calma e realizou o
+                                procedimento com muita qualidade. Super indico.”
+
+                            </blockquote>
+
+
+                            <strong>
+                                Danielle Alves
+                            </strong>
+
+                        </article>
+
+
+                        <!-- REVIEW 3 -->
+
+                        <article class="review">
+
+                            <div class="review__top">
+
+                                <div class="stars" aria-label="5 estrelas">
+
+                                    ★★★★★
+
+                                </div>
+
+                                <span class="google-label">
+                                    Google
+                                </span>
+
+                            </div>
+
+
+                            <blockquote>
+
+                                “Atendimento 10! Lugar novo e aconchegante.
+                                Dra. Cinthia é muito atenciosa e explica tudo
+                                antes de fazer qualquer procedimento.”
+
+                            </blockquote>
+
+
+                            <strong>
+                                Thiago De Paula Martins
+                            </strong>
+
+                        </article>
+
+
+                        <!-- REVIEW 4 -->
+
+                        <article class="review">
+
+                            <div class="review__top">
+
+                                <div class="stars" aria-label="5 estrelas">
+
+                                    ★★★★★
+
+                                </div>
+
+                                <span class="google-label">
+                                    Google
+                                </span>
+
+                            </div>
+
+
+                            <blockquote>
+
+                                “Ambiente super aconchegante, doutora mega simpática
+                                e atenciosa! Somente agradecer pelo trabalho impecável.”
+
+                            </blockquote>
+
+
+                            <strong>
+                                Jhennyfer Macedo
+                            </strong>
+
+                        </article>
+
+
+                    </div>
+
+
+                    <button class="carousel__btn carousel__btn--next" data-next type="button"
+                        aria-label="Próxima avaliação">
+
+                        ›
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="container center mt-xl">
+
+                <a class="btn btn--outline" id="btnGoogleReviews" href="#" target="_blank" rel="noopener">
+
+                    Ver avaliações no Google
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA / CONVERSÃO
+        ====================================================== -->
+
+        <section class="consultation-cta">
+
+            <div class="container consultation-cta__inner">
+
+                <div>
+
+                    <span class="eyebrow eyebrow--light">
+                        Seu próximo sorriso começa aqui
+                    </span>
+
+
+                    <h2>
+                        Vamos conversar sobre
+                        <em>o sorriso que você deseja?</em>
+                    </h2>
+
+
+                    <p>
+                        Agende sua avaliação e receba
+                        um planejamento pensado para você.
+                    </p>
+
+                </div>
+
+
+                <a class="btn btn--cream btn--lg" id="btnConsultationCta" href="#" target="_blank" rel="noopener">
+
+                    Agendar pelo WhatsApp
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LOCALIZAÇÃO
+        ====================================================== -->
+
+        <section class="section location" id="localizacao">
+
+            <div class="container location__grid">
+
+
+                <!-- TEXTO -->
+
+                <div class="location__content">
+
+                    <span class="eyebrow">
+                        Onde estamos
+                    </span>
+
+
+                    <h2>
+                        Vila Formosa,
+                        <em>São Paulo.</em>
+                    </h2>
+
+
+                    <p class="location__address" id="addressText">
+
+                        Praça Barão de Macaúbas, 31 -
+                        Vila Formosa - São Paulo - SP,
+                        03357-040
+
+                    </p>
+
+
+                    <p class="location__description">
+
+                        Um espaço pensado para receber você
+                        com conforto, cuidado e tranquilidade.
+
+                    </p>
+
+
+                    <a class="btn btn--primary" id="btnLocCta" href="#" target="_blank" rel="noopener">
+
+                        Agendar consulta
+
+                    </a>
+
+                </div>
+
+
+                <!-- MAPA -->
+
+                <div class="location__map">
+
+                    <div class="map-embed">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1449792240123!2d-46.559785224669945!3d-23.56323597879854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c2b9e260d8d%3A0xeee18113c62690cc!2sPra%C3%A7a%20Bar%C3%A3o%20de%20Maca%C3%BAbas%2C%2031%20-%20Vila%20Formosa%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003357-040!5e0!3m2!1spt-BR!2sbr!4v1769139103055!5m2!1spt-BR!2sbr"
+                            width="100%" height="460" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização do consultório da Dra. Cinthia Leone">
+
+                        </iframe>
+
+
+                        <a class="map-embed__cta" id="mapsLink" href="#" target="_blank" rel="noopener">
+
+                            Abrir no Google Maps
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer class="footer">
-        <div class="container footer__inner">
-            <div>
-                <strong>Pronto para transformar seu sorriso?</strong>
-                <p class="muted">Agende sua avaliação grátis e receba um planejamento personalizado.</p>
+
+        <div class="container footer__main">
+
+
+            <div class="footer__brand">
+
+                <img src="./assets/logo2.png" alt="Dra. Cinthia Leone" class="footer__logo">
+
+                <p>
+                    Odontologia com cuidado,
+                    naturalidade e atenção aos detalhes.
+                </p>
+
             </div>
-            <a class="btn btn--primary" id="btnFooterCta" href="#" target="_blank" rel="noopener">Agendar no
-                WhatsApp</a>
+
+
+            <div class="footer__links">
+
+                <strong>
+                    Navegação
+                </strong>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#casos">
+                    Casos
+                </a>
+
+                <a href="#procedimentos">
+                    Tratamentos
+                </a>
+
+                <a href="#clinica">
+                    A clínica
+                </a>
+
+            </div>
+
+
+            <div class="footer__contact">
+
+                <strong>
+                    Atendimento
+                </strong>
+
+                <span>
+                    Vila Formosa • São Paulo
+                </span>
+
+                <span id="footerCro">
+                    CRO: 126.543
+                </span>
+
+
+                <a class="footer__whatsapp" id="btnFooterCta" href="#" target="_blank" rel="noopener">
+
+                    Falar pelo WhatsApp →
+
+                </a>
+
+            </div>
+
         </div>
+
+
         <div class="container footer__bottom">
-            <span class="muted">© <span id="year"></span> Dra. Cinthia Leone • Todos os direitos reservados</span>
+
+            <span>
+                © <span id="year"></span>
+                Dra. Cinthia Leone.
+                Todos os direitos reservados.
+            </span>
+
         </div>
+
     </footer>
 
-    <!-- Botão flutuante WhatsApp -->
-    <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
-        <img src="./assets/whatsapp.png" alt="" />
+
+    <!-- =====================================================
+         WHATSAPP FLUTUANTE
+    ====================================================== -->
+
+    <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener"
+        aria-label="Falar com a Dra. Cinthia pelo WhatsApp">
+
+        <img src="./assets/whatsapp.png" alt="WhatsApp">
+
+        <span class="wa-float__label">
+            Agendar consulta
+        </span>
+
     </a>
+
+
+    <!-- =====================================================
+         VOLTAR AO TOPO
+    ====================================================== -->
 
     <a class="top-float" id="topFloat" href="#top" aria-label="Voltar ao topo">
-        <img src="./assets/topo.png" alt="" />
+
+        ↑
+
     </a>
 
-    <div class="lightbox" id="lightbox">
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+
         <div class="lightbox__overlay"></div>
 
+
         <div class="lightbox__content">
-            <button class="lightbox__close" aria-label="Fechar">✕</button>
-            <img id="lightboxImg" src="" alt="Imagem ampliada" />
+
+            <button class="lightbox__close" type="button" aria-label="Fechar imagem">
+
+                ✕
+
+            </button>
+
+
+            <img id="lightboxImg" src="" alt="Imagem ampliada">
+
         </div>
+
     </div>
 
+
+    <!-- =====================================================
+         SCRIPTS
+
+         galerias.js PRECISA carregar primeiro.
+    ====================================================== -->
+
+    <script src="./galerias.js"></script>
     <script src="./script.js"></script>
+
+
 </body>
 
 </html>

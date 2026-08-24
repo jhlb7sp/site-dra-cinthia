@@ -1,294 +1,1740 @@
-// ===== CONFIG (edite aqui) =====
+// =====================================================
+// CONFIGURAÇÕES DO SITE
+// =====================================================
+
 const CONFIG = {
-  whatsappNumber: "5511968013319", // ex: 5511980562649
-  whatsappMessage: "Olá! Quero agendar uma avaliação com a Dra. Cinthia Leone.",
+  whatsappNumber: "5511968013319",
+
+  whatsappMessage:
+    "Olá! Quero agendar uma avaliação com a Dra. Cinthia Leone.",
+
   croText: "CRO: 126.543",
-  addressText: "📍 Praça Barão de Macaúbas, 31 - Vila Formosa - São Paulo - SP, 03357-040",
-  googleMapsLink: "https://www.google.com/maps/place/Dra+Cinthia+Leone+Cunha+-+Dentista/@-23.563236,-46.5597852,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5d8c6b12106f:0x768202efae36b6de!8m2!3d-23.563236!4d-46.5572103!16s%2Fg%2F11ypllm6vp?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoASAFQAw%3D%3D", // cole o link do Maps do consultório
-  googleReviewsLink: "https://www.google.com/search?sca_esv=c9a82c01d27467b1&rlz=1C1FKPE_pt-PTBR1101BR1101&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTSf1r9qnpVxKl4xoy13Dh8Rwhe_mrG2izFNyyKYH3VJ9kfeWhSy-uPGQuKfnyE3bI9lOb_ce5fdR0gzsaxmeaGH-Va-TKG-6B-2d8_Bnb4jIaUuDrbW-GMlATkQDBwo1fhX4WY%3D&q=Dra+Cinthia+Leone+Cunha+-+Dentista+Coment%C3%A1rios&sa=X&ved=2ahUKEwippsW2zKCSAxX-DLkGHVBhPBQQ0bkNegQINxAH", // opcional
+
+  addressText:
+    "📍 Praça Barão de Macaúbas, 31 - Vila Formosa - São Paulo - SP, 03357-040",
+
+  googleMapsLink:
+    "https://www.google.com/maps/place/Dra+Cinthia+Leone+Cunha+-+Dentista/@-23.563236,-46.5597852,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5d8c6b12106f:0x768202efae36b6de!8m2!3d-23.563236!4d-46.5572103!16s%2Fg%2F11ypllm6vp?entry=ttu&g_ep=EgoyMDI2MDEyMC4wIKXMDSoASAFQAw%3D%3D",
+
+  googleReviewsLink:
+    "https://www.google.com/search?sca_esv=c9a82c01d27467b1&rlz=1C1FKPE_pt-PTBR1101BR1101&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTSf1r9qnpVxKl4xoy13Dh8Rwhe_mrG2izFNyyKYH3VJ9kfeWhSy-uPGQuKfnyE3bI9lOb_ce5fdR0gzsaxmeaGH-Va-TKG-6B-2d8_Bnb4jIaUuDrbW-GMlATkQDBwo1fhX4WY%3D&q=Dra+Cinthia+Leone+Cunha+-+Dentista+Coment%C3%A1rios&sa=X&ved=2ahUKEwippsW2zKCSAxX-DLkGHVBhPBQQ0bkNegQINxAH",
 };
 
-// ===== Helpers =====
+
+// =====================================================
+// HELPERS
+// =====================================================
+
 function buildWhatsAppLink(number, message) {
-  const msg = encodeURIComponent(message || "");
-  return `https://wa.me/${number}?text=${msg}`;
+  const encodedMessage = encodeURIComponent(message || "");
+
+  return `https://wa.me/${number}?text=${encodedMessage}`;
 }
+
 
 function setHref(id, href) {
-  const el = document.getElementById(id);
-  if (el) el.href = href;
+  const element = document.getElementById(id);
+
+  if (element && href) {
+    element.href = href;
+  }
 }
+
+
+// =====================================================
+// CONFIGURA CTAs / INFORMAÇÕES
+// =====================================================
 
 function setupCTAs() {
-  const wa = buildWhatsAppLink(CONFIG.whatsappNumber, CONFIG.whatsappMessage);
-  ["btnHeaderCta","btnHeroCta","btnSobreCta","btnCasosCta","btnProcCta","btnLocCta","btnFooterCta","waFloat"]
-    .forEach(id => setHref(id, wa));
+  const whatsappLink = buildWhatsAppLink(
+    CONFIG.whatsappNumber,
+    CONFIG.whatsappMessage
+  );
 
+
+  const whatsappButtons = [
+    "btnHeaderCta",
+    "btnMobileCta",
+    "btnHeroCta",
+    "btnSobreCta",
+    "btnCasosCta",
+    "btnAntesDepoisCta",
+    "btnProcCta",
+    "btnConsultationCta",
+    "btnLocCta",
+    "btnFooterCta",
+    "waFloat",
+  ];
+
+
+  whatsappButtons.forEach((id) => {
+    setHref(id, whatsappLink);
+  });
+
+
+  // CRO principal
   const cro = document.getElementById("croText");
-  if (cro) cro.textContent = CONFIG.croText;
 
-  const addr = document.getElementById("addressText");
-  if (addr) addr.textContent = CONFIG.addressText;
+  if (cro) {
+    cro.textContent = CONFIG.croText;
+  }
 
-  setHref("mapsLink", CONFIG.googleMapsLink);
-  setHref("btnGoogleReviews", CONFIG.googleReviewsLink);
 
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+  // CRO footer
+  const footerCro =
+    document.getElementById("footerCro");
+
+  if (footerCro) {
+    footerCro.textContent = CONFIG.croText;
+  }
+
+
+  // Endereço
+  const address =
+    document.getElementById("addressText");
+
+  if (address) {
+    address.textContent = CONFIG.addressText;
+  }
+
+
+  // Google Maps
+  setHref(
+    "mapsLink",
+    CONFIG.googleMapsLink
+  );
+
+
+  // Avaliações
+  setHref(
+    "btnGoogleReviews",
+    CONFIG.googleReviewsLink
+  );
+
+
+  // Ano
+  const year =
+    document.getElementById("year");
+
+  if (year) {
+    year.textContent =
+      new Date().getFullYear();
+  }
 }
 
-// ===== Carousel =====
+
+// =====================================================
+// GALERIAS DINÂMICAS
+//
+// galerias.js cria:
+//
+// window.GALERIAS = {
+//   casos: [],
+//   antesdepois: [],
+//   nossaclinica: []
+// };
+// =====================================================
+
+function setupGalleries() {
+  const tracks =
+    document.querySelectorAll(
+      "[data-gallery]"
+    );
+
+
+  tracks.forEach((track) => {
+    renderGallery(track);
+  });
+}
+
+
+function renderGallery(track) {
+  const galleryName =
+    track.dataset.gallery;
+
+
+  if (!galleryName) {
+    return;
+  }
+
+
+  if (!window.GALERIAS) {
+    console.warn(
+      "GALERIAS não encontrada. Verifique se galerias.js está carregando antes de script.js."
+    );
+
+    return;
+  }
+
+
+  const images =
+    window.GALERIAS[galleryName];
+
+
+  if (!Array.isArray(images)) {
+    console.warn(
+      `Galeria "${galleryName}" não encontrada em galerias.js.`
+    );
+
+    return;
+  }
+
+
+  track.innerHTML = "";
+
+
+  if (images.length === 0) {
+    console.warn(
+      `Nenhuma imagem encontrada na galeria "${galleryName}".`
+    );
+
+    return;
+  }
+
+
+  images.forEach(
+    (imagePath, index) => {
+
+      const item =
+        document.createElement("div");
+
+
+      item.className =
+        "carousel__item";
+
+
+      if (index === 0) {
+        item.classList.add(
+          "is-active"
+        );
+      }
+
+
+      const image =
+        document.createElement("img");
+
+
+      image.src =
+        imagePath;
+
+
+      image.alt =
+        buildGalleryAlt(
+          galleryName,
+          index
+        );
+
+
+      image.loading =
+        "lazy";
+
+
+      image.decoding =
+        "async";
+
+
+      image.addEventListener(
+        "error",
+        () => {
+
+          console.warn(
+            `Não foi possível carregar: ${imagePath}`
+          );
+
+
+          item.remove();
+
+        }
+      );
+
+
+      item.appendChild(image);
+
+      track.appendChild(item);
+
+    }
+  );
+}
+
+
+// =====================================================
+// ALT DAS GALERIAS
+// =====================================================
+
+function buildGalleryAlt(
+  galleryName,
+  index
+) {
+  const number =
+    index + 1;
+
+
+  switch (galleryName) {
+
+    case "casos":
+      return `Caso clínico ${number} da Dra. Cinthia Leone`;
+
+
+    case "antesdepois":
+      return `Resultado antes e depois ${number} da Dra. Cinthia Leone`;
+
+
+    case "nossaclinica":
+      return `Consultório da Dra. Cinthia Leone - foto ${number}`;
+
+
+    default:
+      return `Imagem ${number}`;
+
+  }
+}
+
+
+// =====================================================
+// CARROSSEL
+// =====================================================
+
 function setupCarousel(root) {
-  const track = root.querySelector("[data-track]");
-  let items = Array.from(track.children);
+  const track =
+    root.querySelector(
+      "[data-track]"
+    );
 
-  const btnPrev = root.querySelector("[data-prev]");
-  const btnNext = root.querySelector("[data-next]");
 
-  // Se já foi inicializado, evita duplicar clones
-  if (root.dataset.inited === "1") return;
-  root.dataset.inited = "1";
+  if (!track) {
+    return;
+  }
 
-  // --- CLONES (último no começo, primeiro no fim) ---
-  const firstClone = items[0].cloneNode(true);
-  const lastClone = items[items.length - 1].cloneNode(true);
 
-  firstClone.dataset.clone = "1";
-  lastClone.dataset.clone = "1";
+  if (
+    root.dataset.inited === "1"
+  ) {
+    return;
+  }
 
-  track.insertBefore(lastClone, items[0]);
-  track.appendChild(firstClone);
 
-  // Atualiza lista de itens agora com clones
-  items = Array.from(track.children);
+  let items =
+    Array.from(
+      track.children
+    );
 
-  // Índice começa no 1 (primeiro item real, porque 0 é clone do último)
+
+  const btnPrev =
+    root.querySelector(
+      "[data-prev]"
+    );
+
+
+  const btnNext =
+    root.querySelector(
+      "[data-next]"
+    );
+
+
+  // =================================================
+  // ZERO IMAGENS / ITENS
+  // =================================================
+
+  if (
+    items.length === 0
+  ) {
+
+    hideCarouselButtons(
+      btnPrev,
+      btnNext
+    );
+
+
+    return;
+  }
+
+
+  // =================================================
+  // UM ITEM
+  // =================================================
+
+  if (
+    items.length === 1
+  ) {
+
+    root.dataset.inited =
+      "1";
+
+
+    items[0].classList.add(
+      "is-active"
+    );
+
+
+    items[0].style.scrollSnapAlign =
+      "center";
+
+
+    hideCarouselButtons(
+      btnPrev,
+      btnNext
+    );
+
+
+    requestAnimationFrame(
+      () => {
+
+        centerElement(
+          track,
+          items[0],
+          "auto"
+        );
+
+      }
+    );
+
+
+    return;
+  }
+
+
+  root.dataset.inited =
+    "1";
+
+
+  // =================================================
+  // CLONES PARA LOOP
+  // =================================================
+
+  const firstClone =
+    items[0].cloneNode(true);
+
+
+  const lastClone =
+    items[
+      items.length - 1
+    ].cloneNode(true);
+
+
+  firstClone.dataset.clone =
+    "1";
+
+
+  lastClone.dataset.clone =
+    "1";
+
+
+  track.insertBefore(
+    lastClone,
+    items[0]
+  );
+
+
+  track.appendChild(
+    firstClone
+  );
+
+
+  items =
+    Array.from(
+      track.children
+    );
+
+
+  // Índice 0 = clone do último
+  // Índice 1 = primeiro real
+
   let index = 1;
 
-  // Dá destaque no item central (real)
+  let isJumping =
+    false;
+
+
+  // =================================================
+  // ACTIVE
+  // =================================================
+
   function markActive() {
-    items.forEach((it) => it.classList.remove("is-active"));
-    items[index].classList.add("is-active");
-  }
+    items.forEach(
+      (item) => {
 
-  // Centraliza o item no meio do track
-  function centerItem(i, behavior = "smooth") {
-    const target = items[i];
-    const trackRect = track.getBoundingClientRect();
-    const itemRect = target.getBoundingClientRect();
+        item.classList.remove(
+          "is-active"
+        );
 
-    const currentScroll = track.scrollLeft;
-    const delta =
-      (itemRect.left - trackRect.left) - (trackRect.width / 2 - itemRect.width / 2);
-
-    track.scrollTo({ left: currentScroll + delta, behavior });
-  }
-
-  // Primeiro posicionamento (sem animar)
-  requestAnimationFrame(() => {
-    markActive();
-    centerItem(index, "auto");
-  });
-
-  // Move 1 passo
-  function goTo(newIndex) {
-    index = newIndex;
-    markActive();
-    centerItem(index, "smooth");
-  }
-
-  btnNext?.addEventListener("click", () => goTo(index + 1));
-  btnPrev?.addEventListener("click", () => goTo(index - 1));
-
-  // Depois que a animação termina, se estiver no clone, "teleporta" pro real
-  let isJumping = false;
-  track.addEventListener("scroll", () => {
-    if (isJumping) return;
-
-    // Debounce pra esperar parar de rolar
-    clearTimeout(track._t);
-    track._t = setTimeout(() => {
-      const current = items[index];
-
-      if (current?.dataset?.clone === "1") {
-        isJumping = true;
-
-        // Se estamos no clone do primeiro (no final), vai para o primeiro real
-        if (index === items.length - 1) {
-          index = 1;
-        }
-        // Se estamos no clone do último (no começo), vai para o último real
-        else if (index === 0) {
-          index = items.length - 2;
-        }
-
-        markActive();
-        centerItem(index, "auto"); // teleporta sem animação
-        isJumping = false;
-      } else {
-        // Recalcula o item mais central (se o usuário arrastar no mobile)
-        const trackCenter = track.getBoundingClientRect().left + track.clientWidth / 2;
-
-        let best = index;
-        let bestDist = Infinity;
-
-        items.forEach((it, i) => {
-          const r = it.getBoundingClientRect();
-          const center = r.left + r.width / 2;
-          const dist = Math.abs(center - trackCenter);
-          if (dist < bestDist) { bestDist = dist; best = i; }
-        });
-
-        index = best;
-        markActive();
       }
-    }, 120);
-  });
+    );
 
-  // Melhor experiência no mobile: permitir arrastar e "snapping"
-  track.style.scrollSnapType = "x mandatory";
-  items.forEach((it) => (it.style.scrollSnapAlign = "center"));
+
+    if (items[index]) {
+      items[index].classList.add(
+        "is-active"
+      );
+    }
+  }
+
+
+  // =================================================
+  // CENTRALIZA
+  // =================================================
+
+  function centerCurrent(
+    behavior = "smooth"
+  ) {
+    const target =
+      items[index];
+
+
+    if (!target) {
+      return;
+    }
+
+
+    centerElement(
+      track,
+      target,
+      behavior
+    );
+  }
+
+
+  // =================================================
+  // IR PARA
+  // =================================================
+
+  function goTo(
+    newIndex
+  ) {
+
+    if (
+      newIndex < 0 ||
+      newIndex >= items.length
+    ) {
+      return;
+    }
+
+
+    index =
+      newIndex;
+
+
+    markActive();
+
+    centerCurrent(
+      "smooth"
+    );
+
+  }
+
+
+  // =================================================
+  // POSIÇÃO INICIAL
+  // =================================================
+
+  requestAnimationFrame(
+    () => {
+
+      markActive();
+
+      centerCurrent(
+        "auto"
+      );
+
+    }
+  );
+
+
+  // =================================================
+  // BOTÕES
+  // =================================================
+
+  btnNext?.addEventListener(
+    "click",
+    () => {
+
+      goTo(
+        index + 1
+      );
+
+    }
+  );
+
+
+  btnPrev?.addEventListener(
+    "click",
+    () => {
+
+      goTo(
+        index - 1
+      );
+
+    }
+  );
+
+
+  // =================================================
+  // SCROLL / LOOP
+  // =================================================
+
+  track.addEventListener(
+    "scroll",
+    () => {
+
+      if (isJumping) {
+        return;
+      }
+
+
+      clearTimeout(
+        track._scrollTimer
+      );
+
+
+      track._scrollTimer =
+        setTimeout(
+          () => {
+
+            const current =
+              items[index];
+
+
+            // =========================================
+            // CLONE
+            // =========================================
+
+            if (
+              current?.dataset?.clone === "1"
+            ) {
+
+              isJumping =
+                true;
+
+
+              // Clone do primeiro
+              if (
+                index ===
+                items.length - 1
+              ) {
+
+                index = 1;
+
+              }
+
+
+              // Clone do último
+              else if (
+                index === 0
+              ) {
+
+                index =
+                  items.length - 2;
+
+              }
+
+
+              markActive();
+
+              centerCurrent(
+                "auto"
+              );
+
+
+              requestAnimationFrame(
+                () => {
+
+                  isJumping =
+                    false;
+
+                }
+              );
+
+
+              return;
+            }
+
+
+            // =========================================
+            // DESCOBRE ITEM CENTRAL
+            // =========================================
+
+            index =
+              getClosestCenteredIndex(
+                track,
+                items,
+                index
+              );
+
+
+            markActive();
+
+
+            // =========================================
+            // SE O USUÁRIO PAROU EXATAMENTE
+            // NUM CLONE, FAZ O TELEPORTE
+            // =========================================
+
+            if (
+              items[index]
+                ?.dataset
+                ?.clone === "1"
+            ) {
+
+              isJumping =
+                true;
+
+
+              if (
+                index ===
+                items.length - 1
+              ) {
+
+                index = 1;
+
+              }
+
+              else if (
+                index === 0
+              ) {
+
+                index =
+                  items.length - 2;
+
+              }
+
+
+              markActive();
+
+              centerCurrent(
+                "auto"
+              );
+
+
+              requestAnimationFrame(
+                () => {
+
+                  isJumping =
+                    false;
+
+                }
+              );
+
+            }
+
+          },
+
+          140
+        );
+
+    }
+  );
+
+
+  // =================================================
+  // SNAP
+  // =================================================
+
+  track.style.scrollSnapType =
+    "x mandatory";
+
+
+  items.forEach(
+    (item) => {
+
+      item.style.scrollSnapAlign =
+        "center";
+
+    }
+  );
+
+
+  // =================================================
+  // RESIZE
+  // =================================================
+
+  let resizeTimer;
+
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      clearTimeout(
+        resizeTimer
+      );
+
+
+      resizeTimer =
+        setTimeout(
+          () => {
+
+            centerCurrent(
+              "auto"
+            );
+
+          },
+
+          150
+        );
+
+    }
+  );
 }
 
 
-// ===== Before/After =====
+// =====================================================
+// AUXILIAR - CENTRALIZA ELEMENTO
+// =====================================================
+
+function centerElement(
+  track,
+  target,
+  behavior = "smooth"
+) {
+
+  if (
+    !track ||
+    !target
+  ) {
+    return;
+  }
+
+
+  const trackRect =
+    track.getBoundingClientRect();
+
+
+  const itemRect =
+    target.getBoundingClientRect();
+
+
+  const currentScroll =
+    track.scrollLeft;
+
+
+  const delta =
+    (
+      itemRect.left -
+      trackRect.left
+    )
+    -
+    (
+      trackRect.width / 2 -
+      itemRect.width / 2
+    );
+
+
+  track.scrollTo({
+    left:
+      currentScroll +
+      delta,
+
+    behavior,
+  });
+}
+
+
+// =====================================================
+// AUXILIAR - ITEM MAIS CENTRAL
+// =====================================================
+
+function getClosestCenteredIndex(
+  track,
+  items,
+  fallbackIndex = 0
+) {
+
+  const trackRect =
+    track.getBoundingClientRect();
+
+
+  const trackCenter =
+    trackRect.left +
+    track.clientWidth / 2;
+
+
+  let bestIndex =
+    fallbackIndex;
+
+
+  let bestDistance =
+    Infinity;
+
+
+  items.forEach(
+    (item, itemIndex) => {
+
+      const rect =
+        item.getBoundingClientRect();
+
+
+      const center =
+        rect.left +
+        rect.width / 2;
+
+
+      const distance =
+        Math.abs(
+          center -
+          trackCenter
+        );
+
+
+      if (
+        distance <
+        bestDistance
+      ) {
+
+        bestDistance =
+          distance;
+
+
+        bestIndex =
+          itemIndex;
+
+      }
+
+    }
+  );
+
+
+  return bestIndex;
+}
+
+
+// =====================================================
+// ESCONDE SETAS
+// =====================================================
+
+function hideCarouselButtons(
+  btnPrev,
+  btnNext
+) {
+
+  if (btnPrev) {
+    btnPrev.style.display =
+      "none";
+  }
+
+
+  if (btnNext) {
+    btnNext.style.display =
+      "none";
+  }
+}
+
+
+// =====================================================
+// MENU MOBILE
+// =====================================================
+
+function setupMobileMenu() {
+  const menuToggle =
+    document.getElementById(
+      "menuToggle"
+    );
+
+
+  const mobileNav =
+    document.getElementById(
+      "mobileNav"
+    );
+
+
+  if (
+    !menuToggle ||
+    !mobileNav
+  ) {
+    return;
+  }
+
+
+  function openMenu() {
+    menuToggle.classList.add(
+      "is-active"
+    );
+
+
+    mobileNav.classList.add(
+      "is-open"
+    );
+
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+
+    menuToggle.setAttribute(
+      "aria-label",
+      "Fechar menu"
+    );
+
+
+    document.body.classList.add(
+      "menu-open"
+    );
+  }
+
+
+  function closeMenu() {
+    menuToggle.classList.remove(
+      "is-active"
+    );
+
+
+    mobileNav.classList.remove(
+      "is-open"
+    );
+
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+    menuToggle.setAttribute(
+      "aria-label",
+      "Abrir menu"
+    );
+
+
+    document.body.classList.remove(
+      "menu-open"
+    );
+  }
+
+
+  function toggleMenu() {
+    const isOpen =
+      mobileNav.classList.contains(
+        "is-open"
+      );
+
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+
+  menuToggle.addEventListener(
+    "click",
+    toggleMenu
+  );
+
+
+  // Fecha ao navegar
+  mobileNav
+    .querySelectorAll("a")
+    .forEach(
+      (link) => {
+
+        link.addEventListener(
+          "click",
+          closeMenu
+        );
+
+      }
+    );
+
+
+  // Fecha com ESC
+  window.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        mobileNav.classList.contains(
+          "is-open"
+        )
+      ) {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+
+
+  // Se aumentar tela para desktop,
+  // fecha o menu mobile.
+  window.addEventListener(
+    "resize",
+    () => {
+
+      if (
+        window.innerWidth >
+        1050
+      ) {
+
+        closeMenu();
+
+      }
+
+    }
+  );
+}
+
+
+// =====================================================
+// HEADER AO ROLAR
+// =====================================================
+
+function setupHeaderScroll() {
+  const header =
+    document.querySelector(
+      ".header"
+    );
+
+
+  if (!header) {
+    return;
+  }
+
+
+  function update() {
+    const hasScrolled =
+      window.scrollY > 20;
+
+
+    header.classList.toggle(
+      "is-scrolled",
+      hasScrolled
+    );
+  }
+
+
+  update();
+
+
+  window.addEventListener(
+    "scroll",
+    update,
+    {
+      passive: true,
+    }
+  );
+}
+
+
+// =====================================================
+// VOLTAR AO TOPO
+// =====================================================
+
+function setupTopButton() {
+  const topButton =
+    document.getElementById(
+      "topFloat"
+    );
+
+
+  if (!topButton) {
+    return;
+  }
+
+
+  function updateVisibility() {
+    const shouldShow =
+      window.scrollY > 600;
+
+
+    topButton.classList.toggle(
+      "is-hidden",
+      !shouldShow
+    );
+  }
+
+
+  updateVisibility();
+
+
+  window.addEventListener(
+    "scroll",
+    updateVisibility,
+    {
+      passive: true,
+    }
+  );
+
+
+  topButton.addEventListener(
+    "click",
+    (event) => {
+
+      event.preventDefault();
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    }
+  );
+}
+
+
+// =====================================================
+// LIGHTBOX
+// =====================================================
+
+function setupLightbox() {
+  const lightbox =
+    document.getElementById(
+      "lightbox"
+    );
+
+
+  const lightboxImage =
+    document.getElementById(
+      "lightboxImg"
+    );
+
+
+  if (
+    !lightbox ||
+    !lightboxImage
+  ) {
+    return;
+  }
+
+
+  const closeButton =
+    lightbox.querySelector(
+      ".lightbox__close"
+    );
+
+
+  const overlay =
+    lightbox.querySelector(
+      ".lightbox__overlay"
+    );
+
+
+  function openLightbox(
+    src,
+    alt
+  ) {
+
+    lightboxImage.src =
+      src;
+
+
+    lightboxImage.alt =
+      alt ||
+      "Imagem ampliada";
+
+
+    lightbox.classList.add(
+      "is-open"
+    );
+
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
+
+    closeButton?.focus();
+
+  }
+
+
+  function closeLightbox() {
+    lightbox.classList.remove(
+      "is-open"
+    );
+
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.body.style.overflow =
+      "";
+
+
+    lightboxImage.src =
+      "";
+
+  }
+
+
+  // Delegação:
+  // funciona inclusive com os clones
+  // criados dinamicamente pelos carrosséis.
+  document.addEventListener(
+    "click",
+    (event) => {
+
+      const image =
+        event.target.closest(
+          ".carousel img"
+        );
+
+
+      if (!image) {
+        return;
+      }
+
+
+      openLightbox(
+        image.src,
+        image.alt
+      );
+
+    }
+  );
+
+
+  closeButton?.addEventListener(
+    "click",
+    closeLightbox
+  );
+
+
+  overlay?.addEventListener(
+    "click",
+    closeLightbox
+  );
+
+
+  window.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains(
+          "is-open"
+        )
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+}
+
+
+// =====================================================
+// PROTEÇÃO BÁSICA DE IMAGENS
+// =====================================================
+
+function setupImageProtection() {
+  document.addEventListener(
+    "contextmenu",
+    (event) => {
+
+      const image =
+        event.target.closest(
+          "img"
+        );
+
+
+      if (image) {
+        event.preventDefault();
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "dragstart",
+    (event) => {
+
+      if (
+        event.target
+          ?.tagName === "IMG"
+      ) {
+
+        event.preventDefault();
+
+      }
+
+    }
+  );
+}
+
+
+// =====================================================
+// SCROLL SUAVE PARA ÂNCORAS INTERNAS
+// =====================================================
+
+function setupAnchorNavigation() {
+  document
+    .querySelectorAll(
+      'a[href^="#"]'
+    )
+    .forEach(
+      (link) => {
+
+        const href =
+          link.getAttribute(
+            "href"
+          );
+
+
+        if (
+          !href ||
+          href === "#"
+        ) {
+          return;
+        }
+
+
+        link.addEventListener(
+          "click",
+          (event) => {
+
+            const target =
+              document.querySelector(
+                href
+              );
+
+
+            if (!target) {
+              return;
+            }
+
+
+            event.preventDefault();
+
+
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+
+          }
+        );
+
+      }
+    );
+}
+
+// =====================================================
+// COMPARADOR ANTES / DEPOIS
+// =====================================================
+
 function setupBeforeAfter() {
-  const wrap = document.querySelector("[data-before-after]");
-  if (!wrap) return;
 
-  const range = wrap.querySelector("[data-range]");
-  const after = wrap.querySelector("[data-after]");
-  const handle = wrap.querySelector("[data-handle]");
+  const wrapper =
+    document.querySelector(
+      "[data-before-after]"
+    );
 
-  function apply(val) {
-    const v = Math.max(0, Math.min(100, Number(val)));
-    after.style.clipPath = `inset(0 ${100 - v}% 0 0)`;
-    handle.style.left = `${v}%`;
-    range.value = String(v);
+
+  if (!wrapper) {
+    return;
   }
 
-  function valueFromClientX(clientX) {
-    const rect = wrap.getBoundingClientRect();
-    const x = Math.max(rect.left, Math.min(rect.right, clientX));
-    const pct = ((x - rect.left) / rect.width) * 100;
-    return pct;
+
+  const range =
+    wrapper.querySelector(
+      "[data-range]"
+    );
+
+
+  const before =
+    wrapper.querySelector(
+      "[data-before]"
+    );
+
+
+  const handle =
+    wrapper.querySelector(
+      "[data-handle]"
+    );
+
+
+  if (
+    !range ||
+    !before ||
+    !handle
+  ) {
+    return;
   }
 
-  // Range continua funcionando
-  range.addEventListener("input", (e) => apply(e.target.value));
 
-  // Arrastar pela bolinha (handle) OU clicar/arrastar na imagem inteira
-  let dragging = false;
+  // =================================================
+  // APLICA POSIÇÃO
+  // =================================================
 
-  function onDown(e) {
-    dragging = true;
-    wrap.classList.add("is-dragging");
+  function apply(value) {
 
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    apply(valueFromClientX(clientX));
+    const position =
+      Math.max(
+        0,
+        Math.min(
+          100,
+          Number(value)
+        )
+      );
 
-    e.preventDefault();
+
+    before.style.clipPath =
+      `inset(0 ${100 - position}% 0 0)`;
+
+
+    handle.style.left =
+      `${position}%`;
+
+
+    range.value =
+      String(position);
+
   }
 
-  function onMove(e) {
-    if (!dragging) return;
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    apply(valueFromClientX(clientX));
-    e.preventDefault();
+
+  // =================================================
+  // POSIÇÃO DO MOUSE / TOQUE
+  // =================================================
+
+  function positionFromX(clientX) {
+
+    const rect =
+      wrapper.getBoundingClientRect();
+
+
+    const x =
+      Math.max(
+        rect.left,
+        Math.min(
+          rect.right,
+          clientX
+        )
+      );
+
+
+    return (
+      (
+        x -
+        rect.left
+      ) /
+      rect.width
+    ) * 100;
+
   }
 
-  function onUp() {
-    dragging = false;
-    wrap.classList.remove("is-dragging");
+
+  // =================================================
+  // RANGE
+  // Permite teclado / acessibilidade
+  // =================================================
+
+  range.addEventListener(
+    "input",
+    (event) => {
+
+      apply(
+        event.target.value
+      );
+
+    }
+  );
+
+
+  // =================================================
+  // POINTER EVENTS
+  // Mouse + touch
+  // =================================================
+
+  let dragging =
+    false;
+
+
+  wrapper.addEventListener(
+    "pointerdown",
+    (event) => {
+
+      dragging =
+        true;
+
+
+      wrapper.classList.add(
+        "is-dragging"
+      );
+
+
+      try {
+
+        wrapper.setPointerCapture(
+          event.pointerId
+        );
+
+      } catch (_) {}
+
+
+      apply(
+        positionFromX(
+          event.clientX
+        )
+      );
+
+    }
+  );
+
+
+  wrapper.addEventListener(
+    "pointermove",
+    (event) => {
+
+      if (!dragging) {
+        return;
+      }
+
+
+      apply(
+        positionFromX(
+          event.clientX
+        )
+      );
+
+    }
+  );
+
+
+  function stopDragging(
+    event
+  ) {
+
+    dragging =
+      false;
+
+
+    wrapper.classList.remove(
+      "is-dragging"
+    );
+
+
+    if (
+      event?.pointerId !==
+      undefined
+    ) {
+
+      try {
+
+        wrapper.releasePointerCapture(
+          event.pointerId
+        );
+
+      } catch (_) {}
+
+    }
+
   }
 
-  // Eventos no handle
-  handle.addEventListener("mousedown", onDown);
-  handle.addEventListener("touchstart", onDown, { passive: false });
 
-  // (Opcional mas recomendado) também permitir arrastar clicando na imagem
-  wrap.addEventListener("mousedown", onDown);
-  wrap.addEventListener("touchstart", onDown, { passive: false });
+  wrapper.addEventListener(
+    "pointerup",
+    stopDragging
+  );
 
-  window.addEventListener("mousemove", onMove);
-  window.addEventListener("touchmove", onMove, { passive: false });
 
-  window.addEventListener("mouseup", onUp);
-  window.addEventListener("touchend", onUp);
+  wrapper.addEventListener(
+    "pointercancel",
+    stopDragging
+  );
 
-  // Inicial
-  apply(range.value || 50);
+
+  // =================================================
+  // INICIAL
+  // =================================================
+
+  apply(
+    range.value || 50
+  );
+
 }
 
+// =====================================================
+// INICIALIZAÇÃO
+// =====================================================
 
-// ===== Init =====
-document.addEventListener("DOMContentLoaded", () => {
-  setupCTAs();
-  setupBeforeAfter();
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
 
-  document.querySelectorAll("[data-carousel]").forEach(setupCarousel);
-});
+    // -----------------------------------------------
+    // Informações e links
+    // -----------------------------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
-  const topBtn = document.getElementById("topFloat");
+    setupCTAs();
+    setupBeforeAfter();
 
-  if (topBtn) {
-    // começa escondido (opcional)
-    topBtn.classList.add("is-hidden");
 
-    // mostra depois que descer um pouco
-    window.addEventListener("scroll", () => {
-      const show = window.scrollY > 500; // ajuste aqui
-      topBtn.classList.toggle("is-hidden", !show);
-    });
+    // -----------------------------------------------
+    // Galerias primeiro
+    // -----------------------------------------------
 
-    // clique: rolar suave pro topo
-    topBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    setupGalleries();
+
+
+    // -----------------------------------------------
+    // Carrosséis depois
+    // -----------------------------------------------
+
+    document
+      .querySelectorAll(
+        "[data-carousel]"
+      )
+      .forEach(
+        setupCarousel
+      );
+
+
+    // -----------------------------------------------
+    // Menu
+    // -----------------------------------------------
+
+    setupMobileMenu();
+
+
+    // -----------------------------------------------
+    // Header
+    // -----------------------------------------------
+
+    setupHeaderScroll();
+
+
+    // -----------------------------------------------
+    // Topo
+    // -----------------------------------------------
+
+    setupTopButton();
+
+
+    // -----------------------------------------------
+    // Lightbox
+    // -----------------------------------------------
+
+    setupLightbox();
+
+
+    // -----------------------------------------------
+    // Proteção básica
+    // -----------------------------------------------
+
+    setupImageProtection();
+
+
+    // -----------------------------------------------
+    // Navegação
+    // -----------------------------------------------
+
+    setupAnchorNavigation();
+
   }
-});
-
-document.addEventListener("contextmenu", (e) => {
-  // Bloqueia clique direito só em imagens
-  if (e.target && e.target.tagName === "IMG") {
-    e.preventDefault();
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  if (!lightbox || !lightboxImg) return;
-
-  const closeBtn = lightbox.querySelector(".lightbox__close");
-  const overlay = lightbox.querySelector(".lightbox__overlay");
-
-  function open(src, alt) {
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || "Imagem ampliada";
-    lightbox.classList.add("is-open");
-    document.body.style.overflow = "hidden";
-  }
-
-  function close() {
-    lightbox.classList.remove("is-open");
-    document.body.style.overflow = "";
-    lightboxImg.src = "";
-  }
-
-  // Delegação: funciona mesmo com clones do carrossel
-  document.addEventListener("click", (e) => {
-    const img = e.target.closest(".carousel img, .map-link img");
-    if (!img) return;
-    open(img.src, img.alt);
-  });
-
-  closeBtn.addEventListener("click", close);
-  overlay.addEventListener("click", close);
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("is-open")) close();
-  });
-});
+);
