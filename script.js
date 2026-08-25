@@ -1423,6 +1423,161 @@ function setupAnchorNavigation() {
       }
     );
 }
+// =====================================================
+// GOOGLE ANALYTICS - EVENTOS PERSONALIZADOS
+// =====================================================
+
+function setupAnalyticsEvents() {
+
+  function sendAnalyticsEvent(eventName, params = {}) {
+
+    if (typeof gtag !== "function") {
+      console.warn(
+        `Google Analytics ainda não disponível para o evento: ${eventName}`
+      );
+
+      return;
+    }
+
+
+    gtag(
+      "event",
+      eventName,
+      params
+    );
+
+  }
+
+
+  // =================================================
+  // BOTÕES DE AGENDAMENTO
+  // =================================================
+
+  const appointmentButtons = {
+    btnHeaderCta: "header",
+    btnMobileCta: "menu_mobile",
+    btnHeroCta: "hero",
+    btnSobreCta: "sobre",
+    btnCasosCta: "casos",
+    btnAntesDepoisCta: "antes_depois",
+    btnProcCta: "tratamentos",
+    btnConsultationCta: "cta_final",
+    btnLocCta: "localizacao",
+    btnFooterCta: "footer",
+  };
+
+
+  Object.entries(
+    appointmentButtons
+  ).forEach(
+    ([id, location]) => {
+
+      const button =
+        document.getElementById(id);
+
+
+      if (!button) {
+        return;
+      }
+
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          sendAnalyticsEvent(
+            "agendar_consulta",
+            {
+              button_location:
+                location,
+
+              button_text:
+                button.textContent.trim(),
+
+              link_url:
+                button.href || "",
+            }
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  // =================================================
+  // WHATSAPP FLUTUANTE
+  // =================================================
+
+  const whatsappFloat =
+    document.getElementById(
+      "waFloat"
+    );
+
+
+  if (whatsappFloat) {
+
+    whatsappFloat.addEventListener(
+      "click",
+      () => {
+
+        sendAnalyticsEvent(
+          "whatsapp_click",
+          {
+            button_location:
+              "flutuante",
+
+            button_text:
+              "WhatsApp flutuante",
+
+            link_url:
+              whatsappFloat.href || "",
+          }
+        );
+
+      }
+    );
+
+  }
+
+
+  // =================================================
+  // GOOGLE MAPS
+  // =================================================
+
+  const mapsLink =
+    document.getElementById(
+      "mapsLink"
+    );
+
+
+  if (mapsLink) {
+
+    mapsLink.addEventListener(
+      "click",
+      () => {
+
+        sendAnalyticsEvent(
+          "ver_localizacao",
+          {
+            button_location:
+              "mapa",
+
+            button_text:
+              mapsLink.textContent.trim(),
+
+            link_url:
+              mapsLink.href || "",
+          }
+        );
+
+      }
+    );
+
+  }
+
+}
 
 // =====================================================
 // COMPARADOR ANTES / DEPOIS
@@ -1574,7 +1729,7 @@ function setupBeforeAfter() {
           event.pointerId
         );
 
-      } catch (_) {}
+      } catch (_) { }
 
 
       apply(
@@ -1630,7 +1785,7 @@ function setupBeforeAfter() {
           event.pointerId
         );
 
-      } catch (_) {}
+      } catch (_) { }
 
     }
 
@@ -1673,8 +1828,7 @@ document.addEventListener(
 
     setupCTAs();
     setupBeforeAfter();
-
-
+    setupAnalyticsEvents();
     // -----------------------------------------------
     // Galerias primeiro
     // -----------------------------------------------
